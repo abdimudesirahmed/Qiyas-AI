@@ -34,21 +34,27 @@ def low_stock_products(product_list):
     """
     Return products with quantity < 20.
     """
-    pass
+    return list(filter(lambda x: x[1] < 20, product_list))
+print(low_stock_products(products))
+pass
 
 
 def increase_prices(product_list):
     """
     Increase prices by 15% using map().
     """
-    pass
+    return list(map(lambda x: (x[0], x[2] * 1.15), product_list))
+print(increase_prices(products))
+pass
 
 
 def sort_products_by_quantity(product_list):
     """
     Sort products by quantity.
     """
-    pass
+    return sorted(product_list, key=lambda x: x[1])
+print(sort_products_by_quantity(products))
+pass
 
 
 def process_quantities(product_list):
@@ -56,11 +62,23 @@ def process_quantities(product_list):
     Square even quantities.
     Cube odd quantities.
     """
-    pass
+    return [(product[0], product[1] ** 2) if product[1] % 2 == 0 else (product[0], product[1] ** 3) for product in product_list]
+print(process_quantities(products)) 
+pass
 
 
 def expensive_products(product_list):
     """
     Use filter() to get products costing above 5000.
     """
-    pass
+    return list(filter(lambda x: x[2] > 5000, product_list))
+print(expensive_products(products))
+pass
+
+
+
+import numpy as np
+print("NumPy imported successfully!")
+
+arr = np.array([1, 2, 3, 4])
+print(arr * 2)
