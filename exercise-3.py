@@ -77,8 +77,4 @@ pass
 
 
 
-import numpy as np
-print("NumPy imported successfully!")
 
-arr = np.array([1, 2, 3, 4])
-print(arr * 2)

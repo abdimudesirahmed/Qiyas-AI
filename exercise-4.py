@@ -91,7 +91,7 @@ def sort_movies_by_name(movie_list):
     """
     Sort movies by name.
     """
-    return sorted(movie_list, key=lambda x: x[0], reverse=False)
+    return sorted(movie_list, key=lambda x: x[0])
 print(sort_movies_by_name(movies))
 
 pass

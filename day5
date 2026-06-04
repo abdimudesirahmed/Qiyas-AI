@@ -1,0 +1,54 @@
+import numpy as np
+
+sales = np.array([
+   [120, 130, 125, 140, 150],  # Coffee
+   [200, 210, 190, 220, 230],  # Milk
+   [90,  85,  95,  100, 110],  # Bread
+   [60,  70,  65,  80,  75]    # Sugar
+])
+
+#Data Analysis
+
+
+print("all sales data:", sales)
+#milk sales
+print("Milk sales:", sales[1])
+#day 3 sales
+print("Day 3 sales:", sales[:, 2])
+#last 2 days sales
+print("last 2 days sales:", sales[:, 3:])
+
+#part 2 product performance
+
+#total sales for each product and the max
+total_sales = np.sum(sales, axis=1)
+max_sales = np.max(total_sales, axis=0)
+print("Total sales for each product:", total_sales)
+print("Maximum sales for each product:", max_sales)
+#Average daily sales per product
+average_sales = np.mean(sales, axis=1)
+print("average daily sales per product:", average_sales)
+# Highest single-day sale for each product
+max_of_each_day = np.max(sales, axis=0)
+print("highest of the day:", max_of_each_day)
+
+# Lowest single-day sale for each product
+min_of_each_day = np.min(sales, axis=0)
+print("lowest of the day:", min_of_each_day)
+
+#PART 3: Daily Analysis
+#Total sales per day
+total_sales = np.sum(sales, axis=0)
+max_sales = np.max(total_sales, axis=0)
+print("Total sales for each day:", total_sales)
+print("Maximum sales for each day:", max_sales)
+#Average sales per day
+average_sales = np.mean(sales, axis=0)
+print("average daily sales per day:", average_sales)
+
+
+#PART 4: Business Insights
+#Best selling product (overall)
+best = np.sum(sales, axis=1)
+best_sales= np.max(best, axis=0)
+print("the best of the all", best_sales)
