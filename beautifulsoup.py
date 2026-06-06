@@ -82,3 +82,22 @@ soup = BeautifulSoup(html, "html.parser")
 products = soup.find_all(class_="product")
 for product in products:
 	print(product.text)
+
+
+	import requests
+from bs4 import BeautifulSoup
+
+query = "python tutorial"
+
+url = f"https://www.google.com/search?q={query}"
+
+headers = {
+    "User-Agent": "Mozilla/5.0"
+}
+
+response = requests.get(url, headers=headers)
+
+soup = BeautifulSoup(response.text, "html.parser")
+
+for h3 in soup.find_all("h3"):
+    print(h3.text)
