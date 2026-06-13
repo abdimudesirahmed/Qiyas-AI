@@ -39,3 +39,4 @@ print(df)
 print(df.max())
 print(df.min())
 print(df["Cgpa"].mean())
+df["ta"]
