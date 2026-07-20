@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "OilSales.Web/1.0.0": {
+        "runtime": {
+          "OilSales.Web.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "OilSales.Web/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

@@ -1,0 +1,209 @@
+﻿@page
+
+@model OilSales.Web.Pages.Prediction.IndexModel
+
+@{
+    ViewData["Title"] = "Oil Sales Prediction";
+}
+
+
+<div class="container mt-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-lg-8">
+
+            <div class="card shadow">
+
+                <div class="card-header bg-primary text-white">
+
+                    <h3 class="mb-0">
+                        Oil Sales Prediction
+                    </h3>
+
+                    <small>
+                        Multivariate Linear Regression Model
+                    </small>
+
+                </div>
+
+
+                <div class="card-body">
+
+                    <form method="post">
+
+                        <div class="row">
+
+
+                            <div class="col-md-6 mb-3">
+
+                                <label class="form-label">
+                                    Average Price
+                                </label>
+
+                                <input asp-for="Prediction.AveragePrice"
+                                       class="form-control"
+                                       type="number"
+                                       step="0.01"
+                                       required />
+
+                            </div>
+
+
+                            <div class="col-md-6 mb-3">
+
+                                <label class="form-label">
+                                    Volume Sales
+                                </label>
+
+                                <input asp-for="Prediction.VolumeSales"
+                                       class="form-control"
+                                       type="number"
+                                       step="0.01"
+                                       required />
+
+                            </div>
+
+
+                            <div class="col-md-6 mb-3">
+
+                                <label class="form-label">
+                                    Year
+                                </label>
+
+                                <input asp-for="Prediction.Year"
+                                       class="form-control"
+                                       type="number"
+                                       required />
+
+                            </div>
+
+
+                            <div class="col-md-6 mb-3">
+
+                                <label class="form-label">
+                                    Month
+                                </label>
+
+                                <input asp-for="Prediction.Month"
+                                       class="form-control"
+                                       type="number"
+                                       min="1"
+                                       max="12"
+                                       required />
+
+                            </div>
+
+
+                            <div class="col-md-6 mb-3">
+
+                                <label class="form-label">
+                                    City
+                                </label>
+
+                                <input asp-for="Prediction.City"
+                                       class="form-control"
+                                       required />
+
+                            </div>
+
+
+                            <div class="col-md-6 mb-3">
+
+                                <label class="form-label">
+                                    Manufacturer
+                                </label>
+
+                                <input asp-for="Prediction.Manufacturer"
+                                       class="form-control"
+                                       required />
+
+                            </div>
+
+
+                            <div class="col-md-6 mb-3">
+
+                                <label class="form-label">
+                                    Brand
+                                </label>
+
+                                <input asp-for="Prediction.Brand"
+                                       class="form-control"
+                                       required />
+
+                            </div>
+
+
+                            <div class="col-md-6 mb-3">
+
+                                <label class="form-label">
+                                    Class
+                                </label>
+
+                                <input asp-for="Prediction.ProductClass"
+                                       class="form-control"
+                                       required />
+
+                            </div>
+
+
+                            <div class="col-md-6 mb-3">
+
+                                <label class="form-label">
+                                    Price Bracket
+                                </label>
+
+                                <input asp-for="Prediction.PriceBracket"
+                                       class="form-control"
+                                       required />
+
+                            </div>
+
+                        </div>
+
+
+                        <button type="submit"
+                                class="btn btn-primary w-100 mt-3">
+
+                            Predict Value Sales
+
+                        </button>
+
+                    </form>
+
+
+                    @if (Model.PredictedValueSales.HasValue)
+                    {
+                        <div class="alert alert-success mt-4 text-center">
+
+                            <h4>
+                                Predicted Value Sales
+                            </h4>
+
+
+                            <h2>
+                                $@(Model.PredictedValueSales.Value.ToString("N2"))
+                            </h2>
+
+                        </div>
+                    }
+
+
+                    @if (!string.IsNullOrEmpty(Model.ErrorMessage))
+                    {
+                        <div class="alert alert-danger mt-4">
+
+                            @Model.ErrorMessage
+
+                        </div>
+                    }
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
